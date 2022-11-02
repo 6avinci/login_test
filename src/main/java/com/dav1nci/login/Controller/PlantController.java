@@ -30,7 +30,7 @@ public class PlantController {
     }
 
     @RequestMapping(method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public void addPlantByName(@RequestBody Plant plant){
+    public void addPlantByName( Plant plant){
         plantService.updatePlant(plant);
     }
 }

@@ -10,10 +10,10 @@ import java.util.Map;
 @Repository
 public class plantDao {
 
-    private static Map<String, Plant> plants;
+    private static final Map<String, Plant> plants;
 
     static {
-        plants = new HashMap<String, Plant>(){
+        plants = new HashMap<>() {
 
             {
                 put(String.valueOf(1), new Plant("Dattelpalme", "Ich bin eine Dattelpalme. Ich wachse üblicherweise in warmen Breitengraden und werfe gewöhnungsbedürftige Früchte ab.", "assets/img/user/1.jpg", "Lebenszeit: ca. 150 Jahre"));
@@ -29,15 +29,15 @@ public class plantDao {
     }
 
     public Collection<Plant> getAllPlants(){
-        return this.plants.values();
+        return plants.values();
     }
 
     public Plant getPlantByName(String name){
-        return this.plants.get(name);
+        return plants.get(name);
     }
 
     public void removePlantByName(String name) {
-        this.plants.remove(name);
+        plants.remove(name);
     }
 
     public void updatePlant(Plant plant){

@@ -13,7 +13,6 @@ public class Plant {
         this.age = age;
         this.image = image;
     }
-    public Plant(){}
 
     public String getName() {
         return name;
