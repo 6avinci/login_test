@@ -13,7 +13,7 @@ public class plantDao {
     private static final Map<String, Plant> plants;
 
     static {
-        plants = new HashMap<>() {
+        plants = new HashMap<String, Plant>() {
 
             {
                 put(String.valueOf(1), new Plant("Dattelpalme", "Ich bin eine Dattelpalme. Ich wachse üblicherweise in warmen Breitengraden und werfe gewöhnungsbedürftige Früchte ab.", "assets/img/user/1.jpg", "Lebenszeit: ca. 150 Jahre"));
@@ -29,15 +29,15 @@ public class plantDao {
     }
 
     public Collection<Plant> getAllPlants(){
-        return plants.values();
+        return this.plants.values();
     }
 
     public Plant getPlantByName(String name){
-        return plants.get(name);
+        return this.plants.get(name);
     }
 
     public void removePlantByName(String name) {
-        plants.remove(name);
+        this.plants.remove(name);
     }
 
     public void updatePlant(Plant plant){
@@ -47,5 +47,8 @@ public class plantDao {
        p.setAge(plant.getAge());
        p.setImage(plant.getImage());
        plants.put(plant.getName(), plant);
+    }
+    public void insertPlantToDb(Plant plants) {
+        this.plants.put(plants.getImage(), plants);
     }
 }

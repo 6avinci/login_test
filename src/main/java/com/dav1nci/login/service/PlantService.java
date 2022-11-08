@@ -26,4 +26,7 @@ public class PlantService {
     public void updatePlant(Plant plant){
         this.plantDao.updatePlant(plant);
     }
+    public void insertPlant(Plant plant) {
+        this.plantDao.insertPlantToDb(plant);
+    }
 }
