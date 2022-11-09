@@ -19,19 +19,19 @@ public class PlantController {
         return plantService.getAllPlants();
     }
 
-    @RequestMapping(value = "/{name}", method = RequestMethod.GET)
+    @GetMapping(value = "/{name}")
     public Plant getPlantByName(@PathVariable("name") String name){
         return plantService.getPlantByName(name);
     }
 
-    @RequestMapping(value = "/{name}", method = RequestMethod.DELETE)
+    @DeleteMapping(value = "/{name}")
     public void deletePlantByName(@PathVariable("name") String name){
         plantService.removePlantByName(name);
     }
 
     @RequestMapping(method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
     public void updatePlantByName(@RequestBody Plant plant){
-        plantService.updatePlant(plant);
+        plantService.insertPlant(plant);
     }
     @RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
     public void insertPlantByName(@RequestBody Plant plant){

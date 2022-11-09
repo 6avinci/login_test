@@ -1,6 +1,6 @@
 package com.dav1nci.login.service;
 
-import com.dav1nci.login.Dao.plantDao;
+import com.dav1nci.login.Dao.PlantDao;
 import com.dav1nci.login.Entity.Plant;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,7 +10,11 @@ import java.util.Collection;
 @Service
 public class PlantService {
     @Autowired
-    private plantDao plantDao;
+    private final PlantDao plantDao;
+
+    public PlantService(PlantDao plantDao) {
+        this.plantDao = plantDao;
+    }
 
     public Collection<Plant> getAllPlants(){
         return this.plantDao.getAllPlants();
@@ -27,6 +31,6 @@ public class PlantService {
         this.plantDao.updatePlant(plant);
     }
     public void insertPlant(Plant plant) {
-        this.plantDao.insertPlantToDb(plant);
+        plantDao.insertPlantToDb(plant);
     }
 }

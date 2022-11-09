@@ -2,12 +2,12 @@ package com.dav1nci.login.Entity;
 
 public class Plant {
 
-    private String name;
-    private String description;
-    private String age;
-    private String image;
+    public String name;
+    public String description;
+    public String age;
+    public String image;
 
-    public Plant(String name, String description, String image, String age) {
+    public Plant(String name, String description, String age, String image) {
         this.name = name;
         this.description = description;
         this.age = age;
@@ -45,4 +45,5 @@ public class Plant {
     public void setImage(String image) {
         this.image = image;
     }
+
 }
