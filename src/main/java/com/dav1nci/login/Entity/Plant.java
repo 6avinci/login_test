@@ -18,6 +18,7 @@ public class Plant {
         return name;
     }
 
+  /*
     public void setName(String name) {
         this.name = name;
     }
@@ -45,5 +46,6 @@ public class Plant {
     public void setImage(String image) {
         this.image = image;
     }
+    */
 
 }

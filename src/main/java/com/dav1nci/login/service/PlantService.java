@@ -27,9 +27,10 @@ public class PlantService {
         this.plantDao.removePlantByName(name);
     }
 
-    public void updatePlant(Plant plant){
+  /*  public void updatePlant(Plant plant){
         this.plantDao.updatePlant(plant);
-    }
+    }*/
+
     public void insertPlant(Plant plant) {
         plantDao.insertPlantToDb(plant);
     }

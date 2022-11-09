@@ -30,6 +30,7 @@ public class PlantDao {
                             new Plant( "Wacholder", "Bei mir handelt es sich um Wacholder. Unter anderem bin ich eine wighting Zutat für Gin!", "assets/img/user/8.jpg", "Lebenszeit: ca. 600 Jahre"))
                 .collect(Collectors.toMap(Plant::getName, Function.identity()));
 
+        /*
         plants = new HashMap<>() {
             {
                 put(new Plant(1, "Dattelpalme", "Ich bin eine Dattelpalme. Ich wachse üblicherweise in warmen Breitengraden und werfe gewöhnungsbedürftige Früchte ab.", "assets/img/user/1.jpg", "Lebenszeit: ca. 150 Jahre"));
@@ -42,6 +43,7 @@ public class PlantDao {
                 put(String.valueOf(8), new Plant("Wacholder", "Bei mir handelt es sich um Wacholder. Unter anderem bin ich eine wichtige Zutat für Gin!", "assets/img/user/8.jpg", "Lebenszeit: ca. 600 Jahre"));
             }
         };
+         */
 
     }
 
@@ -57,6 +59,7 @@ public class PlantDao {
         plants.remove(name);
     }
 
+   /*
     public void updatePlant(Plant plant) {
         Plant p = plants.get(plant.getName());
         p.setDescription(plant.getDescription());
@@ -65,6 +68,7 @@ public class PlantDao {
         p.setImage(plant.getImage());
         plants.put(plant.getName(), plant);
     }
+    */
 
     public void insertPlantToDb(Plant plant) {
         plants.put(plant.getName(), plant);
