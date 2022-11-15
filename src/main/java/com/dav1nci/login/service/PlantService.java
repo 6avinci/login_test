@@ -6,33 +6,33 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
-@Qualifier("mongoData")
 
 @Service
 public class PlantService {
+    @Qualifier("fakeData")
     @Autowired
-    private final com.dav1nci.login.Dao.PlantDao PlantDao;
+    private final com.dav1nci.login.Dao.fakePlantDaoImpl fakePlantDaoImpl;
 
-    public PlantService(com.dav1nci.login.Dao.PlantDao PlantDao) {
-        this.PlantDao = PlantDao;
+    public PlantService(com.dav1nci.login.Dao.fakePlantDaoImpl fakePlantDaoImpl) {
+        this.fakePlantDaoImpl = fakePlantDaoImpl;
     }
 
     public Collection<Plant> getAllPlants(){
-        return this.PlantDao.getAllPlants();
+        return this.fakePlantDaoImpl.getAllPlants();
     }
     public Plant getPlantByName(String name){
-        return this.PlantDao.getPlantByName(name);
+        return this.fakePlantDaoImpl.getPlantByName(name);
     }
 
     public void removePlantByName(String name) {
-        this.PlantDao.removePlantByName(name);
+        this.fakePlantDaoImpl.removePlantByName(name);
     }
 
     public void updatePlant(Plant plant){
-        this.PlantDao.updatePlant(plant);
+        this.fakePlantDaoImpl.updatePlant(plant);
     }
 
     public void insertPlant(Plant plant) {
-        PlantDao.insertPlantToDb(plant);
+        fakePlantDaoImpl.insertPlantToDb(plant);
     }
 }
